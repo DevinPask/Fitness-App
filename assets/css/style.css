@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+:root {
+    --light-brown: rgba(206, 164, 140, 255);
+    --brown: rgba(154, 87, 45, 255);
+    --dark-green: rgba(36, 68, 65, 255);
+    --faint-gray: rgba(134, 137, 126, 255);
+    --gold: rgba(187, 146, 54, 255);
+    --Poiret-font: 'Poiret One', cursive;
+    --green-gradient: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
+
+
+}
+
+body {
+    background: var(--light-brown);
+}
+
+.page-title {
+    font-family: var(--Poiret-font);
+}
+
+.card-title {
+    font-weight: bolder;
+}
+
+.tracker {
+    background-color: #f9ea8f;
+    background: var(--green-gradient);
+}
