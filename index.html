@@ -1,88 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Fitness 1.0</title>
 </head>
 <body>
-    <div class="jumbotron container-fluid text-center">
-        <h2 class="page-title">
-            How's the Weather?
-        </h2>
-    </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-3">
-                <div class="search input-group">
-                    <input type="text" class="form-control" id="city-input" placeholder="Enter a city name!">
-                    <div class="input-group-append">
-                        <button class="btn search-button" id="search-button"><i class="fa fa-search"> Search</i></button>
+            <div class="col l12 m12 s12">
+                <h1 class="page-title center">Get Active!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="displayImg" src="https://cdn.pixabay.com/photo/2015/01/09/11/22/fitness-594143_960_720.jpg" alt="dumbbells">
+                    </div>
+                    <div class="card-content center">
+                        <span class="card-title grey-text text-darken-4">Working Out?<i class="material-icons right"></i></span>
+                        <a class="waves-effect waves-light btn-large" href="https://www.google.com/maps/search/?api=1&query=gyms" 
+                            target="popup" 
+                            onclick="window.open('https://www.google.com/maps/search/?api=1&query=gyms','popup','width=600,height=600'); return false;">
+                                Find a Gym!
+                        </a>
                     </div>
                 </div>
-                <!--List of Searched Cities-->
-                <button class="btn" id="clear-searches">Clear history</button>
-                <ul class="list-group">
-
-                </ul> 
             </div>
-            <div class="col-9">
-                <div class="row">
-                <div class="clear-history">
-                    <div class="col-12 current-weather">
-                            <h4 class="city-name" id="current-city"></h4>
-                                <p>Temperature: <span class="current" id="temperature"></span></p>
-                                <p>Humidity: <span class="current" id="humidity"></span></p>
-                                <p>Wind Speed: <span class="current" id="wind-speed"></span></p>
-                                <p>UV Index: <span class="current" id="uv-index"></span></p>
+            <div class="col s12 m12 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="displayImg" src="https://cdn.pixabay.com/photo/2019/01/27/22/32/mountains-3959204_960_720.jpg" alt="woman hiking">
                     </div>
-                    <div class="five-day-forecast" >
-                        <h5 class="text-center">Future Forecasts</h5>
-                        <div class="row">
-                            <!--Future dates and images matching weather inserted via javascript-->
-                            <div class="col-md col-sm-12 forecast card">
-                                <p id="date0"></p>
-                                <p id="weatherImg0"></p>
-                                <div class="card-body">
-                                    <p>Temperature:<span id="forecastTemp0"></span></p>
-                                    <p>Humidity:<span id="humidityIndex0"></span></p>
-                                </div>
+                    <div class="card-content center">
+                        <span class="card-title grey-text text-darken-4">Going Hiking?<i class="material-icons right"></i></span>
+                        <a class="waves-effect waves-light btn-large" href="https://www.google.com/maps/search/?api=1&query=hike" 
+                            target="popup" 
+                            onclick="window.open('https://www.google.com/maps/search/?api=1&query=hike','popup','width=600,height=600'); return false;">
+                                Go for a hike!
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="displayImg" src="https://cdn.pixabay.com/photo/2020/08/22/00/24/cyclist-5507225_960_720.jpg" alt="person riding a bike">
+                    </div>
+                    <div class="card-content center">
+                        <span class="card-title grey-text text-darken-4">Going Biking?<i class="material-icons right"></i></span>
+                        <a class="waves-effect waves-light btn-large" href="https://www.google.com/maps/search/?api=1&query=biking+routes" 
+                            target="popup" 
+                            onclick="window.open('https://www.google.com/maps/search/?api=1&query=biking+routes','popup','width=600,height=600'); return false;">
+                                Go biking!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container weather">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                    <h1 class="page-title center">Today's Weather</h1>
+                    <div class="col l4 m12 s12">
+                        <div class="card blue-grey">
+                            <div class="card-content white-text">
+                                <span class="card-title">Completed Workouts</span>
                             </div>
-                            <div class="col-md col-sm-12 forecast card">
-                                <p id="date1"></p>
-                                <p id="weatherImg1"></p>
-                                <div class="card-body">
-                                    <p>Temperature:<span id="tempIndex1"></span></p>
-                                    <p>Humidity:<span id="humidityIndex1"></span></p>
-                                </div>    
+                        </div>
+                    </div>
+                    <div class="col l4 m12 s12">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">Nutrition Tracker</span>
+                                <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
                             </div>
-                            <div class="col-md col-sm-12 forecast card">
-                                <p id="date2"></p>
-                                <p id="weatherImg2"></p>
-                                <div class="card-body">
-                                    <p>Temperature:<span id="tempIndex2"></span></p>
-                                    <p>Humidity:<span id="humidityIndex2"></span></p>
-                                </div>
-                            </div>
-                            <div class="col-md col-sm-12 forecast card">
-                                <p id="date3"></p>
-                                <p id="weatherImg3"></p>
-                                <div class="card-body">
-                                    <p>Temperature:<span id="tempIndex3"></span></p>
-                                    <p>Humidity:<span id="humidityIndex3"></span></p>
-                                </div>
-                            </div>
-                            <div class="col-md col-sm-12 forecast card">
-                                <p id="date4"></p>
-                                <p id="weatherImg4"></p>
-                                <div class="card-body">
-                                    <p>Temperature:<span id="tempIndex4"></span></p>
-                                    <p>Humidity:<span id="humidityIndex4"></span></p>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col l4 m12 s12">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">Weight Tracker</span>
+                                <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
                             </div>
                         </div>
                     </div>
@@ -90,8 +97,66 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/javascript/script.js"></script>
-</body>
-</html>
+    </div>
+    <div class="container tracker">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                    <h1 class="page-title center">Keep track of your activity!</h1>
+                    <div class="col l4 m12 s12">
+                        <div class="card blue-grey">
+                            <div class="card-content white-text">
+                                <span class="card-title">Completed Workouts</span>
+                                <table class="striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Type of workout</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr>
+                                        <td>Weekday</td>
+                                        <td>Workout</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weekday</td>
+                                        <td>Workout</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weekday</td>
+                                        <td>Workout</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l4 m12 s12">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">Nutrition Tracker</span>
+                                <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l4 m12 s12">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">Weight Tracker</span>
+                                <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    </body >
+
+</html >
