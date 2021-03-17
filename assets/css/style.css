@@ -29,7 +29,8 @@ body {
     font-weight: bolder;
 }
 
-.tracker {
+.tracker,
+.weather {
     background-color: #f9ea8f;
     background: var(--green-gradient);
 }
