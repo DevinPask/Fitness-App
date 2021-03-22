@@ -28,7 +28,7 @@ function postWeather() {
 }
 
 const Http = new XMLHttpRequest();
-const url='http://api.openweathermap.org/data/2.5/weather?q=san%20jose&units=imperial&appid=1876ed65ab3cdf8b7a272096e11fe561';
+const url='https://api.openweathermap.org/data/2.5/weather?q=san%20jose&units=imperial&appid=1876ed65ab3cdf8b7a272096e11fe561';
 Http.open("GET", url);
 Http.send();
 Http.onreadystatechange = (e) => {
@@ -50,7 +50,7 @@ var dsunrise = new Date(sunrise*1000);
 var sunset = output.sys.sunset
 var dsunset = new Date(sunset*1000);
 console.log(main,description,temp,wind,sunrise,sunset);
-
+// call each variable in the html to page
 function postWeather() {
   weatherValue.innerHTML = main;
   descValue.innerHTML = description;
@@ -61,4 +61,4 @@ function postWeather() {
 }
 postWeather();
 }
-// call each variable in the html to call whatever info we want to display on the page 
+
