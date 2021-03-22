@@ -25,14 +25,11 @@ body {
     font-family: var(--Poiret-font);
 }
 
-.card-title {
-    font-weight: bolder;
-}
-
 .tracker,
 .weather {
     background-color: #f9ea8f;
     background: var(--green-gradient);
+    font-family: var(--Poiret-font);
 }
 
 .weath {
